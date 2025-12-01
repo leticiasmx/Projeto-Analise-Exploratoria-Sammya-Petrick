@@ -14,13 +14,14 @@ Disponível em: [Kaggle - Olist Dataset](https://www.kaggle.com/datasets/olistbr
 - olist_products_dataset.csv
 
 ## 🎯 Objetivo do Projeto
-Analisar e pré-processar os dados do e-commerce brasileiro Olist para identificar fatores que influenciam a experiência e satisfação do cliente, com foco em:
-- Atrasos de entrega
-- Variações de preço e frete
-- Categorias de produtos problemáticas
-- Tempos de processamento e envio
+O objetivo deste estudo é investigar os padrões que influenciam a experiência e a satisfação do cliente no e-commerce brasileiro, com foco em atrasos na entrega, níveis de satisfação, diferenças de preço e de frete, categorias de produtos problemáticas e variações no tempo de processamento e envio dos pedidos, visando fins de estudo e análise.
 
 ## 📊 Descrição do Processo de Tratamento dos Dados
+O processo de tratamento dos dados começou com o carregamento dos três datasets obrigatórios e sua junção pelas chaves order_id e product_id, resultando em um dataset final unificado com 112.650 registros. Em seguida, foi realizada uma análise exploratória, examinando a estrutura do dataset, os tipos de dados, valores ausentes e estatísticas descritivas das variáveis numéricas.
+
+A limpeza dos dados incluiu o tratamento de valores ausentes por categoria, a correção de inconsistências como produtos com peso zero e a identificação de outliers, que foram tratados usando o método Z-score com capping em ±3 desvios padrão. As datas foram convertidas para o formato datetime, e os nomes de colunas foram padronizados e corrigidos, aplicando-se ainda técnicas de normalização MinMax e padronização Z-score para variáveis numéricas.
+
+Para os dados categóricos, utilizou-se Label Encoding para a coluna product_category_name e One-Hot Encoding para order_status. Foram criadas novas features, incluindo tempo de atraso entre a entrega real e estimada, proporção entre frete e preço, densidade do produto e tempo de processamento, com o objetivo de enriquecer a análise logística e de eficiência. Por fim, realizou-se a seleção de atributos com base em correlações, variância e significância estatística, garantindo que apenas as variáveis mais relevantes fossem consideradas para análises futuras.
 
 ### 1. *Carregamento e Junção dos Dados*
 - Carregamento dos 3 datasets obrigatórios
